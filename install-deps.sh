@@ -5,7 +5,6 @@
 apt install python3-venv swig net-tools # python3-pyscard
 
 python3 -m venv venv
-
 source venv/bin/activate
 
 pip3 uninstall pycrypto
@@ -23,4 +22,5 @@ pip3 install .
 cd ../../../github.com/fasferraz/SWu-IKEv2
 
 
+# Test it
 python3 swu_emulator.py -h
