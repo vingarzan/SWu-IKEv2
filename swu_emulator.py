@@ -2444,7 +2444,7 @@ class swu():
                         elif i[1][3] in (AKA_Identity,):
                             
                       
-                            if i[1][4][0][0] in (AT_ANY_ID_REQ, AT_IDENTITY):
+                            if i[1][4][0][0] in (AT_ANY_ID_REQ, AT_IDENTITY, AT_PERMANENT_ID_REQ):
                                 self.eap_identifier = i[1][1]
                                 identity = (
                                         '0'
