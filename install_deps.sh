@@ -33,5 +33,10 @@ python3 swu_emulator.py -h
 
 echo -e "\n\n >> Setting capabilities to allow binding to low-numbered ports and raw sockets, without sudo...\n\n"
 python_bin=$(readlink -f .venv/bin/python3)
-sudo setcap 'cap_net_bind_service,cap_net_raw=+ep' "$python_bin"
+sudo setcap 'cap_net_bind_service,cap_net_raw,cap_net_admin=+ep' "$python_bin"
 getcap "$python_bin"
+
+ip_bin=$(which ip)
+ip_bin=$(readlink -f "$ip_bin")
+sudo setcap 'cap_net_admin=+ep' "$ip_bin"
+getcap "$ip_bin"
